@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+  </head>
+  <body>
+    <div class="scroll-container">
+      <div class="section" id="home"
+        style="background-image: url('assets/Theo Garde pp.jpg'); ">
+        <nav>
+          <ul>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+            </li>
+            <li>
+              <a href="#formation">Formation</a>
+            </li>
+            <li>
+              <a href="#proepx">My project</a>
+            </li>
+            <li>
+              <a href="#aboutme">About me</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="container">
+          <div class="top-left">Théo Garde</div>
+          <div class="bottom-right">student at Epitech Strasbourg</div>
+        </div>
+      </div>
+      <div class="section" id="formation"
+        style="background: rgb(92, 128, 188);">
+        <div class="split-text-container">
+          <span class="text-part left">Forma</span>
+          <span class="text-part right">tion</span>
+        </div>
+        <div class="slideshow" class="imgslide">
+          <img src="assets/epitechpicture.jpg" alt="Epitech"
+            class="slide-image">
+        </div>
+        <p class="gradient">Following the obtaining of my baccalaureate last
+          year,
+          I am currently at <a href="https://www.epitech.eu/"
+            target="_blank">Epitech</a> Strasbourg, a school of excellence in
+          computer science very well known
+          in France today. I am currently following the bachelor’s program, a
+          program that lasts 3 years.which allows me today to master certain
+          programming languages, notably <a
+            href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML</a>,
+          <a href="https://en.wikipedia.org/wiki/CSS" target="_blank">CSS</a> ,
+          and <a href="https://www.python.org/" target="_blank">Python</a></p>
+      </div>
+      <div class="section" id="proepx" style="background: rgb(52, 52, 52);">
+        <div class="void" id="void">
+          <div class="crop">
+            <ul id="card-list" style="--count: 6;">
+              <li class="rotatingList"><div class="card"><span
+                    class="model-name">new project to
+                    come</span><span>...</span></div></li>
+              <li class="rotatingList"><div class="card"><span
+                    class="model-name">CV in HTML, CSS</span><span>I created a
+                    website that allows me to introduce
+                    myself</span></a></div></li>
+            <div class="last-circle"></div>
+            <div class="second-circle"></div>
+            <div class="center-circle"><div>My project</div></div>
+
+          </div>
+        </div>
+      </div>
+       <div class="section" id="aboutme"style="background: rgb(49, 3, 155);">
+        <p class="gradient2">Hello, my name is Théo Garde, I am 17 years old, I am currently a student at Epitech, a computer science school.
+        My passions are mainly football, I like the racing club of Strasbourg, traveling with currently 14 countries visited and cars 
+        I come from Ribeauvillé in France in the Haut-Rhin(68) and I am currently living for my studies in Strasbourg in the Bas-Rhin(67)</a></p>
+        <img src="assets/rcsa.png" alt="Epitech" class="slide-imagercsa">
+      </div>
+
+
+
+
+      <div class="section" id="contact" style="background-image: url('assets/strasbourg.jpg');"><ul class="social-icons">
+  <li>
+    <a href="https://x.com/gardetheo?s=21" target="_blank"class="x">
+      <span></span><span></span><span></span><span></span>
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com/theo_.grd_/" target="_blank" class="instagram">
+      <span></span><span></span><span></span><span></span>
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+  </li>
+  <li>
+    <a href="mailto:theo.garde@epitech.eu" target="_blank" class="mail">
+      <span></span><span></span><span></span><span></span>
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </li>
+</ul>
+<form class="form">
+  <h2>CONTACT ME </h2>
+  <p type="Name:"><input placeholder="Write your name here.."></input></p>
+  <p type="Email:"><input placeholder="to give you feedback"></input></p>
+  <p type="Message:"><input placeholder="what do you want to talk about ?"></input></p>
+  <button>Send Message</button>
+  <div>
+    <span class="fa fa-phone"></span>06 58 99 36 44
+    <span class="fa fa-envelope-o"></span> theo.garde@epitech.eu
+  </div>
+</form>
+
+</div>
+  </body>
+    
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const formationSection = document.querySelector("#formation");
+      const textParts = formationSection.querySelectorAll(".text-part");
+      const image = formationSection.querySelector(".slide-image");
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { 
+            textParts.forEach(el => {
+              el.classList.remove("animate");
+              void el.offsetWidth; // reset animation
+              el.classList.add("animate");
+            });
+
+            image.classList.remove("animate");
+            void image.offsetWidth;
+            image.classList.add("animate");
+          } else {
+        
+            textParts.forEach(el => el.classList.remove("animate"));
+            image.classList.remove("animate");
+          }
+        });
+      }, {
+        threshold: 0.3 
+      });
+
+      observer.observe(formationSection);
+    });
+  </script>
+
+</html>
